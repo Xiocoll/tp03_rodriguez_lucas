@@ -23,7 +23,7 @@ export class ProduitService {
   }
 
   searchNom(searchNom: string): Observable<void> {
-    return this.fetchApps().pipe(
+    return this.fetchProd().pipe(
       tap((prods: Produit[]) => {
         prods = prods.filter(prod => prod.nom.toLowerCase().includes(searchNom));
         this.filtreProd.next(prods);
@@ -33,7 +33,7 @@ export class ProduitService {
   }
 
   searchType(searchType: string): Observable<void> {
-    return this.fetchApps().pipe(
+    return this.fetchProd().pipe(
       tap((prods: Produit[]) => {
         prods = prods.filter(prod => prod.type.toLowerCase().includes(searchType));
         this.filtreProd.next(prods);
@@ -42,7 +42,7 @@ export class ProduitService {
     );
   }
 
-  private fetchApps(): Observable<Produit[]> {
+  private fetchProd(): Observable<Produit[]> {
     if (this.prods) {
       return of(this.prods);
     }
