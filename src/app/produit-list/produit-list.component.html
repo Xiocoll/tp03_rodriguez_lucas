@@ -1,6 +1,6 @@
 <h3>Produits: </h3>
 
-<input id="nom" [appError]="getValidationNom ()" [(ngModel)]="nom">  
+<app-moteur-recherche></app-moteur-recherche> 
 
 <ul class="list-group">
   <li class="list-group-item" *ngFor="let produit of produits | async">

@@ -10,22 +10,15 @@ import { ProduitService } from '../produit.service';
 })
 export class ProduitListComponent implements OnInit {
 
-  produits : Observable<Produit[]>
-
   constructor(private ProduitService : ProduitService) { }
-
-  nom : string = "";
+  
+  produits : Observable<Produit[]> = this.ProduitService.getSearchResults();
 
   ngOnInit() {
-    this.produits = this.ProduitService.getProduits();
   }
 
-  getValidationNom () : boolean {
-    if(this.nom == ""){
-      return true;
-    } else {
-    return (/^[A-Za-z]{1,30}$/.test (this.nom));
-    }    
-  }
+  
+
+  
 
 }

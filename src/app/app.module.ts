@@ -18,6 +18,7 @@ import { TestStringDirective } from './test-string.directive';
 import { ProduitListComponent } from './produit-list/produit-list.component';
 import { ProduitService } from './produit.service';
 import { ErrorDirective } from './error.directive';
+import { MoteurRechercheComponent } from './moteur-recherche/moteur-recherche.component';
 
 const appRoutes: Routes = [
   {path: 'clients', component: ClientListComponent},
@@ -31,7 +32,7 @@ const appRoutes: Routes = [
 
 @NgModule({
   imports:      [ BrowserModule, FormsModule, RouterModule.forRoot(appRoutes), ReactiveFormsModule, HttpClientModule ],
-  declarations: [ AppComponent, TetiereComponent, FooterComponent, FormulaireComponent, ClientListComponent, PhonePipe, TestStringDirective, ProduitListComponent, ErrorDirective],
+  declarations: [ AppComponent, TetiereComponent, FooterComponent, FormulaireComponent, ClientListComponent, PhonePipe, TestStringDirective, ProduitListComponent, ErrorDirective, MoteurRechercheComponent],
   bootstrap:    [ AppComponent ],
   providers: [ClientService, ProduitService]
 })
